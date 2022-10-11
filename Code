@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool cmp(pair<int,int>a,pair<int,int>b){
+return a.first<b.first;
+}
+int n,res=0,req=0;
+pair<int,int>h[100000];
+main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    cin >> n;
+    for(int a=0;a<n;a++){
+        cin >> h[a].first;
+        h[a].second =a+1;
+    }
+    sort(h,h+n,cmp);
+    for(int a=0;a<n;a++){
+        req+=h[a].first;
+        res+=req;
+        cout << h[a].second << " "<< req << "\n";
+    }
+    cout << res;
+}
